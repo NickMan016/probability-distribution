@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribución Normal</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/pyscript.css">
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+<body>
+    <py-env>
+        - scipy
+    </py-env>
+    <py-script src="./py/app.py"></py-script>
+
+    <header>
+        <div class="titulo__header">
+            Distribución Normal
+        </div>
+    </header>
+
+    <div class="contenedor">
+        <form class="formulario" id="formulario" autocomplete="off">
+            <div class="form__group">
+                <label class="label__input" for="mu">Valor de &mu;</label>
+                <input type="text" id="mu" value="0">
+            </div>
+            
+            <div class="form__group">
+                <label class="label__input" for="si">Valor de &sigma;</label>
+                <input type="text" id="si" value="1">
+            </div>
+            
+            <div class="form__group">
+                <label class="label__input" for="option">Probabilidad</label>
+                <select id="option">
+                    <option value="1">P(X > x)</option>
+                    <option value="2">P(X < x)</option>
+                    <option value="3">2P(X > |x|)</option>
+                    <option value="4">P(-|x| < X < |x|)</option>
+                </select>
+                <i class="icono__input fa-solid fa-caret-down"></i>
+            </div>
+            
+            <div class="form__group">
+                <label class="label__input" for="x">Valor de x</label>
+                <input type="text" id="x">
+            </div>
+            
+            <div class="form__group result">
+                <label class="label__input" for="z">Valor de z</label>
+                <input type="text" id="z" readonly disabled>
+            </div>
+            
+            <button class="btn" id="btn" pys-onclick="calculate">Calcular</button>
+        </form>
+    </div>
+
+    <div class="contenedor">
+        <canvas id="chartjs"></canvas>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9439cfc36.js" crossorigin="anonymous"></script>
+    <script src="./js/chart.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
